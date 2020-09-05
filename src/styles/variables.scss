@@ -1,0 +1,17 @@
+$width-item: 100px;
+$position: 1px;
+
+$days: ("mon":0,"tue":1,"wed":2,"thu":3,"fri":4,"sat":5,"sun":6);
+
+@for $i from 1 through 31 {
+  .calendar div:nth-child(#{$i})::before {
+    content: "#{$i}";
+    color: black;
+  }
+}
+
+@each $name, $number in $days {
+  .calendar-#{$name} div:first-of-type {
+    margin-left: $width-item * $number + $position*3;
+  }
+}

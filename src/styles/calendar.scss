@@ -1,0 +1,40 @@
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 720px;
+  margin: auto;
+
+  div {
+    width: 100px;
+    height: 100px;
+
+    margin: 1px;
+
+    transition: background-color 0.5s;
+
+    text-align: center;
+    line-height: 100px;
+    background-color: #eee;
+    border: 1px solid black;
+  }
+}
+
+.calendar div:last-of-type,
+.calendar-29 div:nth-child(30),
+.calendar-28 div:nth-child(29),
+.calendar-28 div:nth-child(30) {
+  display: none;
+}
+
+.calendar-31 div:last-of-type {
+  display: block;
+}
+
+.calendar div:hover {
+  position: relative;
+
+  background-color: pink;
+  transform: translate(0, -20px);
+  cursor: pointer;
+}
